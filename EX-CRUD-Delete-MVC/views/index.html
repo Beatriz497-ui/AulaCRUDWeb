@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>MVC - Deletar Unicórnio</title>
+</head>
+<body>
+    <h2>Gerenciador MVC - Excluir Unicórnio</h2>
+
+    <?php if(isset($_GET['status']) && $_GET['status'] == 'sucesso'): ?>
+        <p style="color: green;">ID <?php echo $_GET['id']; ?> removido com sucesso!</p>
+    <?php endif; ?>
+
+    <?php if(isset($_GET['status']) && $_GET['status'] == 'erro'): ?>
+        <p style="color: red;"><?php echo $_GET['msg']; ?></p>
+    <?php endif; ?>
+
+    <form action="index.php?action=deletar" method="POST">
+        <label>ID do Unicórnio:</label><br>
+        <input type="text" name="id" required placeholder="Insira o ID">
+        <button type="submit">Deletar via MVC</button>
+    </form>
+</body>
+</html>
